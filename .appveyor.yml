@@ -18,6 +18,7 @@ install:
 build: off
 
 test_script:
-  - chef exec kitchen test %suite%
+  - chef exec kitchen converge %suite%
+  - chef exec kitchen verify %suite%
 
 deploy: off
