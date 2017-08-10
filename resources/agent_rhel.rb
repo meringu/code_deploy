@@ -3,7 +3,7 @@ resource_name :code_deploy_agent
 default_action %i[install enable start]
 
 provides :code_deploy_agent_linux
-provides :code_deploy_agent, platform_family: 'rhel'
+provides :code_deploy_agent, platform_family: ['rhel', 'amazon']
 
 property :auto_update, [true, false], default: false
 
