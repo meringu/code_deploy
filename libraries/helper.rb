@@ -8,8 +8,8 @@ module CodeDeploy
     # @return [String]
     #
     def code_deploy_bucket
-      region = if node.key?('ec2')
-                 node['ec2']['placement_availability_zone'].chop
+      region = if node.key?('ec2') and node['ec2'].key?('availability_zone')
+                 node['ec2']['availability_zone'].chop
                else
                  'us-east-1'
                end
