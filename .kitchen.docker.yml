@@ -15,6 +15,7 @@ platforms:
   - name: centos-7.2
     driver_config:
       run_command: /usr/sbin/init
+      provision_command: yum install -y initscripts
 
 suites:
   - name: default
