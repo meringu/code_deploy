@@ -5,7 +5,7 @@ describe 'code_deploy::install_agent' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new(
       platform: 'windows',
-      version: '2012R2',
+      version: '2019',
       step_into: ['code_deploy_agent']
     ).converge(described_recipe)
   end

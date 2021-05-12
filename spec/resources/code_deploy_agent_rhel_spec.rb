@@ -5,7 +5,7 @@ describe 'code_deploy::install_agent' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new(
       platform: 'redhat',
-      version: '7.3',
+      version: '8',
       step_into: ['code_deploy_agent'],
       file_cache_path: '/tmp'
     ).converge(described_recipe)
