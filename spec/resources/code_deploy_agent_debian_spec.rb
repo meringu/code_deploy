@@ -5,7 +5,7 @@ describe 'code_deploy::install_agent' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new(
       platform: 'ubuntu',
-      version: '16.04',
+      version: '20.04',
       step_into: ['code_deploy_agent'],
       file_cache_path: '/tmp'
     ).converge(described_recipe)
