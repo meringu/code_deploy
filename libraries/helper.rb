@@ -55,7 +55,7 @@ module CodeDeploy
     #
     def version_hash
       @version_hash ||= begin
-        uri = URI.parse(https_code_deploy_bucket_loc('latest/VERSION'))
+        uri = URI.parse(https_code_deploy_bucket_loc('latest/LATEST_VERSION'))
         response = Net::HTTP.get_response(uri)
         JSON.parse(response.body)
       end
