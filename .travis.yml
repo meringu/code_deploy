@@ -19,6 +19,7 @@ deploy:
   on:
     tags: true
     condition: $SUITE = unit
+  skip_cleanup: true
 env:
   - SUITE=unit
   - SUITE=default-centos-79
