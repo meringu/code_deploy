@@ -14,7 +14,7 @@ end
 action :install do
   include_recipe 'apt'
 
-  package 'ruby' do
+  package 'ruby-full' do
     package_name 'ruby2.0' if ubuntu_less_than_15?
   end
 

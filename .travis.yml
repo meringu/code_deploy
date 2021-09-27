@@ -1,15 +1,15 @@
 sudo: required
 language: ruby
 rvm:
-- 3.0.1
+  - 3.0.1
 services:
-- docker
+  - docker
 script:
-- |
+  - |
     if [ $SUITE != unit ]; then
       KITCHEN_YAML=.kitchen.docker.yml bundle exec kitchen test $SUITE
     fi
-- |
+  - |
     if [ $SUITE = unit ]; then
       bundle exec rspec
     fi
@@ -21,9 +21,13 @@ deploy:
     condition: $SUITE = unit
 env:
   - SUITE=unit
-  - SUITE=default-centos-72
+  - SUITE=default-centos-79
   - SUITE=default-ubuntu-1404
   - SUITE=default-ubuntu-1604
-  - SUITE=uninstall-centos-72
+  - SUITE=default-ubuntu-1804
+  - SUITE=default-ubuntu-2004
+  - SUITE=uninstall-centos-79
   - SUITE=uninstall-ubuntu-1404
   - SUITE=uninstall-ubuntu-1604
+  - SUITE=uninstall-ubuntu-1804
+  - SUITE=uninstall-ubuntu-2004
