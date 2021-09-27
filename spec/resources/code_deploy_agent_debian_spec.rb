@@ -18,7 +18,7 @@ describe 'code_deploy::install_agent' do
   end
 
   it 'installs ruby' do
-    expect(chef_run).to install_package('ruby')
+    expect(chef_run).to install_package('ruby-full')
   end
 
   it 'downlads the deb' do
