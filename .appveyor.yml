@@ -10,7 +10,7 @@ environment:
 install:
   - net user /add %winrm_user% %winrm_pass%
   - net localgroup administrators %winrm_user% /add
-  - choco install -y chefdk
+  - choco install -y chefdk --version 2.0.28
   - refreshenv
   - set KITCHEN_YAML=.kitchen.appveyor.yml
   - chef gem install kitchen-local kitchen-pester
